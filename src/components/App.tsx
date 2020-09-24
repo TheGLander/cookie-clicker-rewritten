@@ -11,7 +11,10 @@ export default class App extends React.Component {
 				}}
 			>
 				<h1>Cookie clicker rewritten!</h1>
-				<BigCookie />
+				<BigCookie
+					src="./img/bigCookie.png"
+					onClick={() => console.log("Click!")}
+				/>
 			</div>
 		)
 	}

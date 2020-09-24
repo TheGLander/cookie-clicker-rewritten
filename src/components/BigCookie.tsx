@@ -1,7 +1,8 @@
 import React from "react"
 
 interface BigCookieProps {
-	onClick?: (e: MouseEvent) => void
+	onClick?: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void
+	src: string
 	rescaleTimer?: number
 }
 
@@ -37,8 +38,9 @@ export default class BigCookie extends React.Component<
 	onClickStart(): void {
 		this.setState(oldState => ({ ...oldState, targetSize: 0.75 }))
 	}
-	onClickEnd(): void {
+	onClickEnd(event: React.MouseEvent<HTMLImageElement, MouseEvent>): void {
 		this.setState(oldState => ({ ...oldState, targetSize: 1.25 }))
+		this.props.onClick?.(event)
 	}
 	onHoverStart(): void {
 		this.setState(oldState => ({ ...oldState, targetSize: 1.25 }))
@@ -55,10 +57,11 @@ export default class BigCookie extends React.Component<
 					onMouseEnter={this.onHoverStart}
 					onMouseLeave={this.onHoverEnd}
 					onDragStart={ev => ev.preventDefault()}
-					src="./img/bigCookie.png"
+					src={this.props.src}
 					style={{
 						transform: `scale(${this.state.currentSize}, ${this.state.currentSize})`,
 						userSelect: "none",
+						cursor: "pointer",
 					}}
 				/>
 			</div>
