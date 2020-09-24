@@ -1,5 +1,6 @@
 const path = require("path")
 const HTMLPlugin = require("html-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
 //const ArchivePlugin = require("webpack-archive-plugin")
 //const { name } = require("./package.json")
 let plugins = [
@@ -7,6 +8,7 @@ let plugins = [
 		template: "./src/index.html",
 		filename: "index.html",
 	}),
+	new CopyPlugin({ patterns: [{ from: "src/img", to: "img" }] }),
 ]
 /*if (process.env.NODE_ENV === "production")
 	plugins.push(new ArchivePlugin({ format: "tar", output: `./dist/${name}` }))*/

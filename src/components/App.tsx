@@ -1,4 +1,5 @@
 import React from "react"
+import BigCookie from "./BigCookie"
 
 export default class App extends React.Component {
 	render(): JSX.Element {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
 				}}
 			>
 				<h1>Cookie clicker rewritten!</h1>
+				<BigCookie />
 			</div>
 		)
 	}
