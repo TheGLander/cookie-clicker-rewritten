@@ -34,6 +34,7 @@
 		"keycode": "^2.2.0",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
+		"source-map-loader": "^1.1.0",
 		"standard-version": "^8.0.0",
 		"style-loader": "^1.1.2",
 		"styled-components": "^5.1.1",

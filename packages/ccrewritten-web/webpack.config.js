@@ -34,6 +34,11 @@ module.exports = {
 				test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
 				loader: "file-loader",
 			},
+			{
+				test: /\.(j|t)sx?$/,
+				enforce: "pre",
+				use: ["source-map-loader"],
+			},
 		],
 	},
 	mode: process.env.NODE_ENV,
