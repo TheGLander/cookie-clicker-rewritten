@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"description": "The core of CCRewritten, the logic",
 	"main": "dist/main.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build:prod": "env NODE_ENV=production npm run build",
 		"build:dev": "env NODE_ENV=development npm run build",

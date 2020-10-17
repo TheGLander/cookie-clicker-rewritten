@@ -8,7 +8,6 @@ let plugins = [
 		template: "./src/index.html",
 		filename: "index.html",
 	}),
-	new CopyPlugin({ patterns: [{ from: "src/img", to: "img" }] }),
 ]
 /*if (process.env.NODE_ENV === "production")
 	plugins.push(new ArchivePlugin({ format: "tar", output: `./dist/${name}` }))*/
@@ -31,7 +30,7 @@ module.exports = {
 				use: ["style-loader", "css-loader"],
 			},
 			{
-				test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+				test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|mp3)$/,
 				loader: "file-loader",
 			},
 			{

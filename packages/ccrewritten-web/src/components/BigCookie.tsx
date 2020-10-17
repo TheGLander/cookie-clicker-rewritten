@@ -4,6 +4,7 @@ interface BigCookieProps {
 	onClick?: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void
 	src: string
 	rescaleTimer?: number
+	style: React.CSSProperties
 }
 
 interface BigCookieState {
@@ -50,7 +51,7 @@ export default class BigCookie extends React.Component<
 	}
 	render(): JSX.Element {
 		return (
-			<div>
+			<>
 				<img
 					onMouseDown={this.onClickStart}
 					onMouseUp={this.onClickEnd}
@@ -62,9 +63,10 @@ export default class BigCookie extends React.Component<
 						transform: `scale(${this.state.currentSize}, ${this.state.currentSize})`,
 						userSelect: "none",
 						cursor: "pointer",
+						...this.props.style,
 					}}
 				/>
-			</div>
+			</>
 		)
 	}
 }
