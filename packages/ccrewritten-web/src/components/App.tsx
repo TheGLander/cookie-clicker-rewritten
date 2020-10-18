@@ -17,7 +17,11 @@ export default class App extends React.Component {
 															'. art store'`,
 				}}
 			>
-				<h1 style={{ gridArea: "title" }}>Cookie clicker rewritten!</h1>
+				<div style={{ gridArea: "title", placeSelf: "center" }}>
+					Cookie clicker rewritten! This is a copy of{" "}
+					<a href="https://orteil.dashnet.org/cookieclicker">cookie clicker</a>,
+					please play that first!
+				</div>
 				<br />
 				<BigCookie
 					src={cookie}
