@@ -26,6 +26,7 @@ export default class App extends React.Component {
 				<BigCookie
 					src={cookie}
 					onClick={() => console.log("Click!")}
+					radius={128}
 					style={{
 						gridArea: "cookie",
 						width: "256px",
