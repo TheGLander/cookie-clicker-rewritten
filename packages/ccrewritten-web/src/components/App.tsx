@@ -1,6 +1,7 @@
 import React from "react"
 import BigCookie from "./BigCookie"
 import cookie from "../img/bigCookie.png"
+import { ParticleManager } from "../particles"
 export default class App extends React.Component {
 	render(): JSX.Element {
 		return (
@@ -34,6 +35,7 @@ export default class App extends React.Component {
 						placeSelf: "center",
 					}}
 				/>
+				<ParticleManager />
 			</div>
 		)
 	}
