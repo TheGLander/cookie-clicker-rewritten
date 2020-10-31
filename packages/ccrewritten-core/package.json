@@ -16,11 +16,13 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/plugin-syntax-nullish-coalescing-operator": "^7.7.4",
+		"@types/eventemitter3": "^2.0.2",
 		"babel": "^6.23.0",
 		"babel-loader": "^8.0.6",
 		"babel-minify": "^0.5.1",
 		"babel-plugin-minify-constant-folding": "^0.5.0",
 		"babel-preset-minify": "^0.5.1",
+		"eventemitter3": "^4.0.7",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10"
 	},

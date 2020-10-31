@@ -5,6 +5,8 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "main.js",
+		library: "CCRCore",
+		libraryTarget: "umd",
 	},
 	devtool: "source-map",
 	module: {

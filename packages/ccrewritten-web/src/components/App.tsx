@@ -3,7 +3,15 @@ import BigCookie from "./BigCookie"
 import cookie from "../img/bigCookie.png"
 import background from "../img/backgroundBlue.png"
 import { ParticleManager } from "../particles"
-export default class App extends React.Component {
+import CookieDisplay from "./CookieDisplay"
+import GameState from "../../../ccrewritten-core/"
+
+interface AppState {
+	gameState: GameState
+}
+
+export default class App extends React.Component<{}, AppState> {
+	state = { gameState: new GameState() }
 	render(): JSX.Element {
 		return (
 			<>
@@ -47,9 +55,15 @@ export default class App extends React.Component {
 						, please play that first!
 					</div>
 					<br />
+					<CookieDisplay
+						gameState={this.state.gameState}
+						style={{ gridArea: "cookie" }}
+					/>
 					<BigCookie
 						src={cookie}
-						onClick={() => console.log("Click!")}
+						onClick={this.state.gameState.clickCookie.bind(
+							this.state.gameState
+						)}
 						radius={128}
 						style={{
 							gridArea: "cookie",
