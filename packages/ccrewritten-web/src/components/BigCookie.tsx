@@ -13,7 +13,6 @@ interface BigCookieState {
 	targetSize: number
 	currentSize: number
 	changeDelta: number
-	ogBoundRect: [number, number]
 	clickable: boolean
 }
 
@@ -27,7 +26,6 @@ export default class BigCookie extends React.Component<
 		this.state = {
 			targetSize: 1,
 			currentSize: 1,
-			ogBoundRect: null,
 			clickable: true,
 			changeDelta: 0,
 		}
@@ -50,13 +48,10 @@ export default class BigCookie extends React.Component<
 		}, props.rescaleTimer ?? 50)
 	}
 	checkRadius(event: React.MouseEvent<HTMLImageElement, MouseEvent>): boolean {
-		let rect = this.state.ogBoundRect
-		if (rect === null) {
-			const actualRect = event.currentTarget.getBoundingClientRect()
-			rect = [actualRect.x, actualRect.y]
-		}
-		const x = event.clientX - rect[0] - this.props.radius
-		const y = event.clientY - rect[1] - this.props.radius
+		const rect = event.currentTarget.getBoundingClientRect()
+		const offset = this.props.radius * (this.state.currentSize - 1)
+		const x = event.clientX - rect.x + offset - this.props.radius
+		const y = event.clientY - rect.y + offset - this.props.radius
 		return Math.sqrt(x ** 2 + y ** 2) < this.props.radius
 	}
 
@@ -89,10 +84,6 @@ export default class BigCookie extends React.Component<
 		)
 	}
 	onHoverStart(event: React.MouseEvent<HTMLImageElement, MouseEvent>): void {
-		if (this.state.currentSize === 1) {
-			const rect = event.currentTarget.getBoundingClientRect()
-			this.setState({ ogBoundRect: [rect.x, rect.y] })
-		}
 		if (!this.checkRadius(event)) return
 		this.setState({ targetSize: 1.05, clickable: true })
 	}
