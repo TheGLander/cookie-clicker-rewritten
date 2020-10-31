@@ -5,6 +5,7 @@
 		"resolveJsonModule": true,
 		"sourceMap": true,
 		"declaration": true,
-		"declarationDir": "dist"
+		"declarationDir": "dist",
+		"incremental": true
 	}
 }
