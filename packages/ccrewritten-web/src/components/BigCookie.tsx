@@ -1,6 +1,6 @@
 import React from "react"
 import { createParticle } from "../particles"
-
+import backgroundBlue from "../img/backgroundBlue.png"
 interface BigCookieProps {
 	onClick?: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void
 	src: string
@@ -69,13 +69,15 @@ export default class BigCookie extends React.Component<
 					userSelect: "none",
 					fontFamily: "Merriweather",
 					fontSize: "20px",
+					pointerEvents: "none",
+					display: "block-inline",
 				}}
 			>
 				+1
 			</div>,
 			{
 				x: event.pageX,
-				y: event.pageY - 21,
+				y: event.pageY,
 				deltaX: 0,
 				deltaY: -2,
 				lifespan: 4,
