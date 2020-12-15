@@ -59,6 +59,7 @@ export class Particle {
 					top: this.y,
 					position: "absolute",
 					zIndex: 999999999,
+					pointerEvents: "none",
 					opacity:
 						this.lifeLeft !== "infinity" && this.lifespan !== "infinity"
 							? this.lifeLeft / this.lifespan

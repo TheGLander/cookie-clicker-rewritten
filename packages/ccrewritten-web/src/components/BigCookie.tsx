@@ -70,7 +70,6 @@ export default class BigCookie extends React.Component<
 					fontFamily: "Merriweather",
 					fontSize: "20px",
 					pointerEvents: "none",
-					display: "block-inline",
 				}}
 			>
 				+1
